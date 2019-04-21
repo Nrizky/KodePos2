@@ -28,7 +28,7 @@ public class Kodepos{
 	}
 
 	public List<Kodepos> getKodepos(){
-		return kodepos;
+		return null;
 	}
 
 	public void setKelurahan(String kelurahan){

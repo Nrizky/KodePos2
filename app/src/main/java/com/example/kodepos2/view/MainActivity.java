@@ -1,25 +1,23 @@
 package com.example.kodepos2.view;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.Adapter;
 import android.widget.Toast;
 
 import com.example.kodepos2.R;
 import com.example.kodepos2.adapter.MainAdapter;
 import com.example.kodepos2.model.Kodepos;
 import com.example.kodepos2.presenter.MainView;
-import com.google.gson.internal.bind.ReflectiveTypeAdapterFactory;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements MainView {
 
     private RecyclerView recyclerView;
-    private ReflectiveTypeAdapterFactory.Adapter adapter;
-    private com.example.pelatihan3.presenter.MainPresenter mainPresenter;
+    private MainAdapter adapter;
+    private com.example.kodepos2.presenter.MainPresenter mainPresenter;
     private Object Adapter;
 
     @Override
@@ -27,13 +25,13 @@ public class MainActivity extends AppCompatActivity implements MainView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.rec_artikel);
-        mainPresenter = new com.example.pelatihan3.presenter.MainPresenter(this, this);
+        mainPresenter = new com.example.kodepos2.presenter.MainPresenter(this, this);
 
     }
 
     @Override
     public void onSucces(List<Kodepos> kodepos) {
-        adapter = new Kodepos(getApplicationContext(), kodepos);
+        adapter = new MainAdapter(getApplicationContext(), kodepos);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
         adapter.notifyAll();

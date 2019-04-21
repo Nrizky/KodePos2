@@ -1,14 +1,9 @@
-package com.example.pelatihan3.presenter;
+package com.example.kodepos2.presenter;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.example.kodepos2.model.Kodepos;
-import com.example.kodepos2.presenter.MainView;
 import com.example.kodepos2.service.BaseApp;
-import com.example.kodepos2.service.KodeposAPI;
-import com.example.kodepos2.view.MainActivity;
-
 
 import retrofit2.Call;
 import retrofit2.Callback;
